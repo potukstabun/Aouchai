@@ -1,30 +1,80 @@
-<html>
+<!DOCTYPE html>
+<html lang="th">
   <head>
-    <meta charswet="utf-8">
-    <title>จตุรมิตร31</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-   <style> 
-     body {
-  font-family: "Prompt", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
+    <meta charset="utf-8">
+    <title>จตุรมิตร 31</title>
 
-     mark{
-       background: radial-gradient(holowpurple, gray);
-       color:violet;} 
-     button{background: radial-gradient(hotpink, skyblue);
-           color: blue;}
-   </style>
+    <!-- ฟอนต์ Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: "Prompt", sans-serif;
+        text-align: center;
+        color: white;
+        background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUQEhIVFRUVFRUVFRYVFRUVFRUVFRUWFxUVFRUYHSggGBolGxUWITEhJSkrLi4uFx8zODMtNygtLi0BCgoKDg0OFxAQGy0dHR0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLf/AABEIAL4BCgMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBQECBAYAB//EADkQAAECBAMGBAUEAQQDAQAAAAEAAgMEERIxQVEFEmFxkaETFIHwBlKxwdEyQuHxFSJicpIjosIW/8QAGgEAAwEBAQEAAAAAAAAAAAAAAAECAwQGBf/EACcRAAIDAAIBAwQCAwAAAAAAAAABAhESAxNRBCEiFDFBYQUVgbHw/9oADAMBAAIRAxEAPwD6eA...') no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      mark {
+        background: radial-gradient(purple, gray);
+        color: violet;
+        padding: 5px 10px;
+        border-radius: 8px;
+      }
+
+      button {
+        background: radial-gradient(hotpink, skyblue);
+        color: blue;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: radial-gradient(skyblue, hotpink);
+      }
+
+      h2 {
+        margin: 15px 0;
+      }
+    </style>
   </head>
-  <body background="data:image/jpeg;base64,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">
-  <h1><marquee><mark>ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร4เหล่าโรงเรียน สวนกุหลาบวิทยาลัย เทพศิรินทร์ อัสสัมชัญ กรุงเทพคริสเตียน</mark></marquee></h1>
-  <br>
-  <h2><button onclick="dockument.location='http://www.sk.ac.th/'">โรงเรียนสวนกุหลาบวิทยาลัย</h2></button>
-     <h2><button onclick="dockument.location='https://www.debsirin.ac.th/'">โรงเรียนเทพศิรินทร์</h2></button>
-    <h2><button onclick="dockument.location='https://www.assumption.ac.th/'">โรงเรียนอัสสัมชัญ </h2></button>
-     <h2><button onclick="dockument.location='https://www.bcc.ac.th/2019/'">โรงเรียนกรุงเทพคริสเตียน</h2></button>
+
+  <body>
+    <h1>
+      <marquee>
+        <mark>ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร 4 เหล่าโรงเรียน — สวนกุหลาบวิทยาลัย เทพศิรินทร์ อัสสัมชัญ กรุงเทพคริสเตียน</mark>
+      </marquee>
+    </h1>
+
+    <h2>
+      <button onclick="document.location='http://www.sk.ac.th/'">
+        โรงเรียนสวนกุหลาบวิทยาลัย
+      </button>
+    </h2>
+
+    <h2>
+      <button onclick="document.location='https://www.debsirin.ac.th/'">
+        โรงเรียนเทพศิรินทร์
+      </button>
+    </h2>
+
+    <h2>
+      <button onclick="document.location='https://www.assumption.ac.th/'">
+        โรงเรียนอัสสัมชัญ
+      </button>
+    </h2>
+
+    <h2>
+      <button onclick="document.location='https://www.bcc.ac.th/2019/'">
+        โรงเรียนกรุงเทพคริสเตียน
+      </button>
+    </h2>
   </body>
 </html>
