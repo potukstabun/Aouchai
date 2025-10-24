@@ -8,14 +8,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap" rel="stylesheet">
-<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1Xy7iCwBYQUjG8YKgIk4f6wDtSC8obBR0Q&s">
+
     <style>
+      /* กำหนดพื้นหลังและฟอนต์ */
       body {
         font-family: "Prompt", sans-serif;
         text-align: center;
         color: white;
-        background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...') no-repeat center center fixed;
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1Xy7iCwBYQUjG8YKgIk4f6wDtSC8obBR0Q&s') no-repeat center center fixed;
         background-size: cover;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* เคลื่อนไหวข้อความแทน marquee */
+      @keyframes marqueeEffect {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .marquee-text {
+        display: inline-block;
+        padding: 10px;
+        animation: marqueeEffect 10s linear infinite;
       }
 
       mark {
@@ -38,10 +58,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-size: 40px 40px; /* ปรับขนาดโลโก้ */
+        background-size: 40px 40px;
         background-repeat: no-repeat;
         background-position: left center;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* เพิ่มเงาให้ข้อความ */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
       }
 
       /* ปุ่มแต่ละโรงเรียน */
@@ -79,12 +99,14 @@
 
   <body>
     <h1>
-      <marquee>
-        <mark>
-          ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร 4 เหล่าโรงเรียน — 
-          สวนกุหลาบวิทยาลัย • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
-        </mark>
-      </marquee>
+      <div class="marquee-container">
+        <div class="marquee-text">
+          <mark>
+            ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร 4 เหล่าโรงเรียน — 
+            สวนกุหลาบวิทยาลัย • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
+          </mark>
+        </div>
+      </div>
     </h1>
 
     <h2>
