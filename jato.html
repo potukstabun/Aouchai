@@ -29,29 +29,40 @@
       button {
         font-size: 1.2em;
         font-weight: bold;
-        padding: 10px 25px;
+        padding: 20px 25px;
         border: none;
         border-radius: 10px;
         cursor: pointer;
         color: blue;
         transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: 40px 40px; /* ปรับขนาดโลโก้ */
+        background-repeat: no-repeat;
+        background-position: left center;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* เพิ่มเงาให้ข้อความ */
       }
 
       /* ปุ่มแต่ละโรงเรียน */
       .btn-sk {
         background: radial-gradient(hotpink, skyblue);
+        background-image: url('https://www.sk.ac.th/your_logo_url.png');
       }
 
       .btn-deb {
         background: radial-gradient(limegreen, yellow);
+        background-image: url('https://www.debsirin.ac.th/your_logo_url.png');
       }
 
       .btn-assump {
         background: radial-gradient(red, white);
+        background-image: url('https://www.assumption.ac.th/your_logo_url.png');
       }
 
       .btn-bcc {
         background: radial-gradient(violet, gold);
+        background-image: url('https://www.bcc.ac.th/your_logo_url.png');
       }
 
       /* เอฟเฟกต์ hover */
