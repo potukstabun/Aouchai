@@ -1,136 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
   <head>
-    <meta charset="utf-8">
-    <title>จตุรมิตร 31</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>จตุรมิตร 31 — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน</title>
 
     <!-- ฟอนต์ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap" rel="stylesheet" />
 
     <style>
-      /* กำหนดพื้นหลังและฟอนต์ */
-      body {
-        font-family: "Prompt", sans-serif;
-        text-align: center;
-        color: white;
-        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1Xy7iCwBYQUjG8YKgIk4f6wDtSC8obBR0Q&s') no-repeat center center fixed;
-        background-size: cover;
-        margin: 0;
-        padding: 0;
+      :root{
+        --bg-overlay: rgba(0,0,0,0.45);
+        --accent-1: #ff83bf; /* สวนกุหลาบ */
+        --accent-2: #9bd84b; /* เทพศิรินทร์ */
+        --accent-3: #e63946; /* อัสสัมชัญ */
+        --accent-4: #9b59ff; /* กรุงเทพคริสเตียน */
+        --btn-text: #05132a;
+        --glass-radius: 12px;
+        --max-width: 1000px;
       }
 
-      /* เคลื่อนไหวข้อความแทน marquee */
-      @keyframes marqueeEffect {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
+      /* Reset / base */
+      *{box-sizing: border-box}
+      html,body{height:100%}
+      body{
+        margin:0;
+        font-family:"Prompt",system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;
+        background-color:#111;
+        color: #fff;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        line-height:1.35;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:24px;
       }
 
-      .marquee-container {
-        overflow: hidden;
-        white-space: nowrap;
+      /* Background image with overlay for contrast */
+      .page-bg{
+        position:fixed;
+        inset:0;
+        background-image:
+          linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+          url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1Xy7iCwBYQUjG8YKgIk4f6wDtSC8obBR0Q&s");
+        background-size:cover;
+        background-position:center;
+        z-index:-1;
+        filter:brightness(.95);
       }
 
-      .marquee-text {
-        display: inline-block;
-        padding: 10px;
-        animation: marqueeEffect 10s linear infinite;
+      .container{
+        width:100%;
+        max-width:var(--max-width);
+        text-align:center;
       }
 
-      mark {
-        background: radial-gradient(purple, gray);
-        color: violet;
-        padding: 5px 10px;
-        border-radius: 8px;
+      /* Skip link for keyboard users */
+      .skip-link{
+        position: absolute;
+        left: -999px;
+        top: auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+      }
+      .skip-link:focus{
+        left: 16px;
+        top: 12px;
+        width:auto;
+        height:auto;
+        padding:8px 12px;
+        background:#fff;
+        color:#000;
+        border-radius:6px;
+        z-index:10;
       }
 
-      /* ปุ่มหลัก */
-      button {
-        font-size: 1.2em;
-        font-weight: bold;
-        padding: 20px 25px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        color: blue;
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-size: 40px 40px;
-        background-repeat: no-repeat;
-        background-position: left center;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+      header h1{
+        margin:0 0 18px;
+        font-weight:600;
+        font-size:clamp(1.2rem, 2.4vw, 1.9rem);
+        text-shadow:0 2px 6px rgba(0,0,0,.6);
       }
 
-      /* ปุ่มแต่ละโรงเรียน */
-      .btn-sk {
-        background: radial-gradient(hotpink, skyblue);
-        background-image: url('https://www.sk.ac.th/your_logo_url.png');
+      /* Accessible "marquee" — decorative animation but provides static accessible text for screen readers */
+      .marquee-wrap{
+        overflow:hidden;
+        width:100%;
+        border-radius:var(--glass-radius);
+        display:block;
+        margin:0 auto 20px;
+        background: rgba(255,255,255,0.04);
+        padding:8px 12px;
       }
 
-      .btn-deb {
-        background: radial-gradient(limegreen, yellow);
-        background-image: url('https://www.debsirin.ac.th/your_logo_url.png');
+      .marquee{
+        display:inline-block;
+        white-space:nowrap;
+        will-change:transform;
+        padding-left:100%;
+        animation: scroll-left 12s linear infinite;
+        font-weight:600;
+        color:#f1f1ff;
       }
 
-      .btn-assump {
-        background: radial-gradient(red, white);
-        background-image: url('https://www.assumption.ac.th/your_logo_url.png');
+      /* Respect prefers-reduced-motion */
+      @media (prefers-reduced-motion: reduce){
+        .marquee{ animation: none; transform: none; padding-left:0; }
       }
 
-      .btn-bcc {
-        background: radial-gradient(violet, gold);
-        background-image: url('https://www.bcc.ac.th/your_logo_url.png');
+      @keyframes scroll-left{
+        0%{ transform: translateX(0%); }
+        100%{ transform: translateX(-100%); }
       }
 
-      /* เอฟเฟกต์ hover */
-      button:hover {
-        transform: scale(1.05);
-        opacity: 0.9;
+      /* Grid of school buttons */
+      .schools{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap:16px;
+        align-items:stretch;
       }
 
-      h2 {
-        margin: 15px 0;
+      .school-btn{
+        display:flex;
+        gap:12px;
+        align-items:center;
+        justify-content:flex-start;
+        padding:14px 16px;
+        border-radius:12px;
+        text-decoration:none;
+        color:var(--btn-text);
+        background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        transition: transform .18s ease, box-shadow .18s ease;
+        font-weight:600;
+        min-height:64px;
+      }
+
+      .school-btn:focus{
+        outline:3px solid rgba(255,255,255,0.25);
+        outline-offset:4px;
+      }
+
+      .school-btn:hover{ transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.45); }
+
+      .logo{
+        width:56px;
+        height:56px;
+        border-radius:10px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700;
+        color:white;
+        flex:0 0 56px;
+        font-size:0.95rem;
+        box-shadow: inset 0 -6px 12px rgba(0,0,0,0.18);
+      }
+
+      .meta{
+        text-align:left;
+        flex:1 1 auto;
+      }
+
+      .meta .name{ font-size:1rem; color:#06243a; }
+      .meta .desc{ font-size:0.85rem; margin-top:4px; color:#375e78; }
+
+      /* school colors */
+      .sk .logo{ background: linear-gradient(180deg,var(--accent-1),#6fd0ff); color:#05132a; }
+      .deb .logo{ background: linear-gradient(180deg,var(--accent-2),#fff08a); color:#05132a; }
+      .assump .logo{ background: linear-gradient(180deg,var(--accent-3),#ffd6d6); color:white; }
+      .bcc .logo{ background: linear-gradient(180deg,var(--accent-4),#ffd66b); color:#05132a; }
+
+      /* small screens */
+      @media (max-width:480px){
+        .meta .name{ font-size:0.96rem; }
+        .meta .desc{ font-size:0.78rem; }
+        .logo{ width:48px; height:48px; font-size:0.85rem; }
       }
     </style>
   </head>
 
   <body>
-    <h1>
-      <div class="marquee-container">
-        <div class="marquee-text">
-          <mark>
-            ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร 4 เหล่าโรงเรียน — 
-            สวนกุหลาบวิทยาลัย • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
-          </mark>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <a href="#schools" class="skip-link">ข้ามไปยังลิงก์โรงเรียน</a>
+
+    <main class="container" id="top">
+      <header role="banner" aria-labelledby="site-title">
+        <h1 id="site-title">ยินดีต้อนรับ — จตุรมิตร 4 เหล่าโรงเรียน</h1>
+
+        <div class="marquee-wrap" aria-hidden="false" role="region" aria-label="ข้อความต้อนรับ">
+          <!-- The animated element is decorative; screen readers will still read the accessible text below -->
+          <div class="marquee" aria-hidden="true">
+            ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
+          </div>
+          <!-- Visible text for assistive tech and reduced motion users -->
+          <span class="sr-only" style="position:absolute;left:-9999px;top:auto;">ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร 4 เหล่าโรงเรียน — สวนกุหลาบ, เทพศิรินทร์, อัสสัมชัญ, กรุงเทพคริสเตียน</span>
         </div>
-      </div>
-    </h1>
+      </header>
 
-    <h2>
-      <button class="btn-sk" onclick="document.location='http://www.sk.ac.th/'">
-        โรงเรียนสวนกุหลาบวิทยาลัย
-      </button>
-    </h2>
+      <section id="schools" class="schools" aria-labelledby="schools-heading">
+        <h2 id="schools-heading" style="position:absolute;left:-9999px;top:auto;">ลิงก์โรงเรียน</h2>
 
-    <h2>
-      <button class="btn-deb" onclick="document.location='https://www.debsirin.ac.th/'">
-        โรงเรียนเทพศิรินทร์
-      </button>
-    </h2>
+        <!-- Each card is an anchor that opens in a new tab (external links) -->
+        <a class="school-btn sk" href="http://www.sk.ac.th/" target="_blank" rel="noopener noreferrer" aria-label="ไปยังเว็บไซต์ โรงเรียนสวนกุหลาบวิทยาลัย (เปิดใหม่)">
+          <div class="logo" aria-hidden="true">SK</div>
+          <div class="meta">
+            <div class="name">โรงเรียนสวนกุหลาบวิทยาลัย</div>
+            <div class="desc">เว็บไซต์ทางการของสวนกุหลาบ</div>
+          </div>
+        </a>
 
-    <h2>
-      <button class="btn-assump" onclick="document.location='https://www.assumption.ac.th/'">
-        โรงเรียนอัสสัมชัญ
-      </button>
-    </h2>
+        <a class="school-btn deb" href="https://www.debsirin.ac.th/" target="_blank" rel="noopener noreferrer" aria-label="ไปยังเว็บไซต์ โรงเรียนเทพศิรินทร์ (เปิดใหม่)">
+          <div class="logo" aria-hidden="true">DEB</div>
+          <div class="meta">
+            <div class="name">โรงเรียนเทพศิรินทร์</div>
+            <div class="desc">เว็บไซต์ทางการของเทพศิรินทร์</div>
+          </div>
+        </a>
 
-    <h2>
-      <button class="btn-bcc" onclick="document.location='https://www.bcc.ac.th/2019/'">
-        โรงเรียนกรุงเทพคริสเตียน
-      </button>
-    </h2>
+        <a class="school-btn assump" href="https://www.assumption.ac.th/" target="_blank" rel="noopener noreferrer" aria-label="ไปยังเว็บไซต์ โรงเรียนอัสสัมชัญ (เปิดใหม่)">
+          <div class="logo" aria-hidden="true">AS</div>
+          <div class="meta">
+            <div class="name">โรงเรียนอัสสัมชัญ</div>
+            <div class="desc">เว็บไซต์ทางการของอัสสัมชัญ</div>
+          </div>
+        </a>
+
+        <a class="school-btn bcc" href="https://www.bcc.ac.th/2019/" target="_blank" rel="noopener noreferrer" aria-label="ไปยังเว็บไซต์ โรงเรียนกรุงเทพคริสเตียน (เปิดใหม่)">
+          <div class="logo" aria-hidden="true">BCC</div>
+          <div class="meta">
+            <div class="name">โรงเรียนกรุงเทพคริสเตียน</div>
+            <div class="desc">เว็บไซต์ทางการของกรุงเทพคริสเตียน</div>
+          </div>
+        </a>
+      </section>
+    </main>
   </body>
 </html>
