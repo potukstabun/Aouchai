@@ -149,13 +149,16 @@
       .school-btn:hover{ transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.45); }
 
       ///////////////////////////////////
-      /* small screens 
+      /* small screens */
       @media (max-width:480px){
         .meta .name{ font-size:0.96rem; }
         .meta .desc{ font-size:0.78rem; }
         .logo{ width:48px; height:48px; font-size:0.85rem; }
-      }*/
-       head
+      }
+       header{background: radial-gradient(lightpink,skyblue,white);
+             padding: 30px;
+             text-align:center;
+             border-radius: 16px;}
 
       
     </style>
@@ -181,38 +184,30 @@
       </header>
 
       <section id="schools" class="schools" aria-labelledby="schools-heading">
-        <h2 id="schools-heading" style="position:absolute;left:-9999px;top:auto;">ลิงก์โรงเรียน</h2>
+        <h2 id="schools-heading" style="position:absolute;left:-9999px;top:auto;"></h2>
 
         <!-- Each card is an anchor that opens in a new tab (external links) -->
         <a class="school-btn sk" href="http://www.sk.ac.th/" target="_blank" rel="noopener noreferrer" aria-label="ไปยังเว็บไซต์ โรงเรียนสวนกุหลาบวิทยาลัย (เปิดใหม่)">
-          <div class="logo" aria-hidden="true">SK</div>
           <div class="meta">
             <div class="name">โรงเรียนสวนกุหลาบวิทยาลัย</div>
-            <div class="desc">เว็บไซต์ทางการของสวนกุหลาบ</div>
           </div>
         </a>
 
         <a class="school-btn deb" href="https://www.debsirin.ac.th/" target="_blank" rel="noopener noreferrer" aria-label="ไปยังเว็บไซต์ โรงเรียนเทพศิรินทร์ (เปิดใหม่)">
-          <div class="logo" aria-hidden="true">DEB</div>
           <div class="meta">
             <div class="name">โรงเรียนเทพศิรินทร์</div>
-            <div class="desc">เว็บไซต์ทางการของเทพศิรินทร์</div>
           </div>
         </a>
 
         <a class="school-btn assump" href="https://www.assumption.ac.th/" target="_blank" rel="noopener noreferrer" aria-label="ไปยังเว็บไซต์ โรงเรียนอัสสัมชัญ (เปิดใหม่)">
-          <div class="logo" aria-hidden="true">AS</div>
           <div class="meta">
             <div class="name">โรงเรียนอัสสัมชัญ</div>
-            <div class="desc">เว็บไซต์ทางการของอัสสัมชัญ</div>
           </div>
         </a>
 
         <a class="school-btn bcc" href="https://www.bcc.ac.th/2019/" target="_blank" rel="noopener noreferrer" aria-label="ไปยังเว็บไซต์ โรงเรียนกรุงเทพคริสเตียน (เปิดใหม่)">
-          <div class="logo" aria-hidden="true">BCC</div>
           <div class="meta">
             <div class="name">โรงเรียนกรุงเทพคริสเตียน</div>
-            <div class="desc">เว็บไซต์ทางการของกรุงเทพคริสเตียน</div>
           </div>
         </a>
       </section>
