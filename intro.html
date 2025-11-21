@@ -1,4 +1,4 @@
-
+<!doctype html>
 <html lang="th">
   <head>
     <meta charset="utf-8" />
@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap" rel="stylesheet" />
 
     <style>
-      
       :root {
         --bg-overlay: rgba(0,0,0,0.45);
         --accent-1: #ff83bf; /* สวนกุหลาบ */
@@ -21,7 +20,7 @@
         --btn-text: #05132a;
         --glass-radius: 12px;
         --max-width: 1000px;
-      cursor;url("jatuu (1).png"),auto; height:100vh }
+      }
 
       * { box-sizing: border-box; }
       html, body { height: 100%; }
@@ -34,13 +33,17 @@
         flex-direction: column;
         align-items: center;
         padding: 24px;
-        section{background: radial-gradient(hotpink,skyblue);
-               padding: 15px;
-               margin: 20px auto;
-                width: 70%;
-               border-radius:10px}
-        p{text-indent:2em}
       }
+
+      section {
+        background: radial-gradient(hotpink,skyblue);
+        padding: 15px;
+        margin: 20px auto;
+        width: 70%;
+        border-radius:10px;
+      }
+
+      p { text-indent:2em; }
 
       .zoom {
         transition: transform 0.25s cubic-bezier(.25,.46,.45,.94);
@@ -75,13 +78,37 @@
 
       header {
         background: radial-gradient(circle at top, rgba(255,192,203,0.85), rgba(135,206,250,0.8), rgba(255,255,255,0.7));
-        padding: 30px;
+        padding: 20px;
         border-radius: 16px;
-        margin-bottom: 28px;
+        margin-bottom: 18px;
       }
 
+      /* Navigation */
+      #main-nav {
+        margin-bottom: 12px;
+      }
+      #main-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 12px 0;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      #main-nav a {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: var(--btn-text);
+        background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+        font-weight: 600;
+      }
+      #main-nav a:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.35); }
+
       header h1 {
-        margin: 0 0 18px;
+        margin: 0 0 12px;
         font-weight: 600;
         font-size: clamp(1.2rem, 2.4vw, 1.9rem);
         text-shadow: 0 2px 6px rgba(0,0,0,.6);
@@ -92,7 +119,7 @@
         border-radius: var(--glass-radius);
         background: rgba(255,255,255,0.08);
         padding: 8px 12px;
-        margin-bottom: 20px;
+        margin-bottom: 8px;
       }
 
       .marquee {
@@ -134,11 +161,7 @@
         font-weight: 600;
       }
 
-      .school-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 28px rgba(0,0,0,0.45);
-      }
-
+      .school-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.45); }
       .school-btn.sk { border-top: 5px solid var(--accent-1); }
       .school-btn.deb { border-top: 5px solid var(--accent-2); }
       .school-btn.assump { border-top: 5px solid var(--accent-3); }
@@ -146,60 +169,78 @@
 
       /* Footer menu */
       #menu {
-        margin-top: 40px;
+        margin-top: 24px;
         width: 100%;
         text-align: center;
-        padding: 20px 0;
+        padding: 14px 0;
         background: linear-gradient(90deg, limegreen, yellow, skyblue, violet, gold, red, white);
         border-radius: 12px;
       }
 
-      #menu a {
-        color: #111;
-        font-weight: 600;
-        margin: 0 10px;
-        text-decoration: none;
-      }
+      #menu a { color: #111; font-weight: 600; margin: 0 10px; text-decoration: none; }
+      #menu a:hover { text-decoration: underline; }
 
-      #menu a:hover {
-        text-decoration: underline;
+      @media (max-width: 520px) {
+        section { width: 92%; }
+        .marquee { font-size: 0.95rem; }
       }
-
     </style>
   </head>
 
   <body>
+    <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
     <div class="page-bg" aria-hidden="true"></div>
 
-    <main class="container">
+    <main id="main" class="container">
       <header>
+        <nav id="main-nav" aria-label="เมนูหลัก">
+          <ul>
+            <li><a href="intro.html">หน้าแรก</a></li>
+            <li><a href="#intro">บทนำ</a></li>
+            <li><a href="#schools">โรงเรียน</a></li>
+            <li><a href="#contact">ติดต่อ</a></li>
+          </ul>
+        </nav>
+
         <h1>ยินดีต้อนรับ — จตุรมิตร 4 เหล่าโรงเรียน</h1>
         <div class="marquee-wrap">
-          <div class="marquee">
-            ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ
-
-          </div>
+          <div class="marquee">ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน</div>
         </div>
-      
       </header>
+
+      <section id="schools" class="schools" aria-label="รายการโรงเรียน">
+        <a class="school-btn sk" href="#">สวนกุหลาบ</a>
+        <a class="school-btn deb" href="#">เทพศิรินทร์</a>
+        <a class="school-btn assump" href="#">อัสสัมชัญ</a>
+        <a class="school-btn bcc" href="#">กรุงเทพคริสเตียน</a>
+      </section>
+
     </main>
+
+    <section id="intro">
+      <center><h1><mark>บทนำ</mark></h1></center>
+      <br>
+      <p>การแข่งขันฟุตบอลประเพณีจตุรมิตรสามัคคี (อังกฤษ: Jaturamitr Samakkee) การแข่งขันฟุตบอลระหว่างสี่โรงเรียนเก่าแก่ของประเทศไทย เป็นประเพณีที่มีผู้คนให้ความสนใจและความทรงจำร่วมกันมายาวนาน</p>
+    </section>
+
+    <center>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6805uzCsBEWB3UHDEjAltUBcj7AXJ1igzaogGZiB-vsBe0wjxjeWNsUUI794VXGBCOfY&usqp=CAU" width="250" height="250" class="zoom" alt="logo1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdH2sA6hQ2mt17UoOhWPzRmMJpl_rWyddBiIeDhh54A6fpAgtYQ5WM_Vn7T-YXtyxE7bE&usqp=CAU" width="250" height="250" class="zoom" alt="logo2">
+      <img src="https://www.bcc.ac.th/2019/img/logo/logo_bcc_annouce.jpg" width="250" height="250" class="zoom" alt="logo3">
+      <img src="https://yt3.googleusercontent.com/VrvAp_1Wh6cXV-xB7RjpDl2KTdtwxuTubTC4XdJ2pzM9l0v65n4IAt7AwrbZFTqnqbE3VpLQZA=s900-c-k-c0x00ffffff-no-rj" width="250" height="250" class="zoom" alt="logo4">
+    </center>
+
+    <hr style="height:8px; width:80%; background: linear-gradient(to right,hotpink,skyblue,limegreen,yellow,violet,gold,red,white);"></hr>
+
+    <div id="menu">
+      <a href="intro.html">หน้าแรก</a>
+      <a href="#intro">บทนำ</a>
+      <a href="#schools">โรงเรียน</a>
+      <a href="#contact">ติดต่อ</a>
+    </div>
+
+    <footer id="contact" style="margin-top:18px; text-align:center; color:#ddd;">
+      <small>ติดต่อ: potukstabun — โครงการตัวอย่าง</small>
+    </footer>
   </body>
-<section>
-  <center>
-    <h1><mark>บทนำ</mark></h1>
-  </center>
-  <br>
-  <p>การแข่งขันฟุตบอลประเพณีจตุรมิตรสามัคคี (อังกฤษ: Jaturamitr Samakkee) การแข่งขันฟุตบอลกระชับมิตรระดับมัธยมศึกษาของโรงเรียนชายล้วนเก่าแก่สี่โรงเรียนประกอบด้วย โรงเรียนสวนกุหลาบวิทยาลัย โรงเรียนเทพศิรินทร์ โรงเรียนอัสสัมชัญ และโรงเรียนกรุงเทพคริสเตียนวิทยาลัย ณ สนามศุภชลาศัย กรีฑาสถานแห่งชาติ
-
-
-</p>
-</section>
-  <center>
-  <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6805uzCsBEWB3UHDEjAltUBcj7AXJ1igzaogGZiB-vsBe0wjxjeWNsUUI794VXGBCOfY&usqp=CAU" width = "250" height = "250" class = "zoom">
-    <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdH2sA6hQ2mt17UoOhWPzRmMJpl_rWyddBiIeDhh54A6fpAgtYQ5WM_Vn7T-YXtyxE7bE&usqp=CAU" width = "250" height = "250" class = "zoom">
-    <img src = "https://www.bcc.ac.th/2019/img/logo/logo_bcc_annouce.jpg" width = "250" height = "250" class = "zoom">
-    <img src = "https://yt3.googleusercontent.com/VrvAp_1Wh6cXV-xB7RjpDl2KTdtwxuTubTC4XdJ2pzM9l0v65n4IAt7AwrbZFTqnqbE3VpLQZA=s900-c-k-c0x00ffffff-no-rj" width = "250" height = "250" class = "zoom">
-  </center>
-  <hr style = "height:8px; width:80%;
-    background: linear-gradient(to right,hotpink,skyblue,limegreen,yellow,violet,gold,red,white);">
 </html>
