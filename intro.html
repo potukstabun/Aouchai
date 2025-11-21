@@ -1,4 +1,4 @@
-<html>
+```html name=intro.html url=https://github.com/potukstabun/Aouchai/blob/967f24c9384c040ced356d07f49e87a9dfb5d007/intro.html
 <html lang="th">
   <head>
     <meta charset="utf-8" />
@@ -40,8 +40,15 @@
                 width: 70%;
                border-radius:10px}
         p{text-indent:2em}
+        /* The button zoom effect is moved to .zoom below */
+      }
 
-        .zoom:hover{transfrom:scale(1.5);cursor:pointer;}
+      .zoom {
+        transition: transform 0.25s cubic-bezier(.25,.46,.45,.94);
+      }
+      .zoom:hover {
+        transform: scale(0.85); /* zoom out on hover */
+        cursor: pointer;
       }
 
       .page-bg {
@@ -170,7 +177,8 @@
         <h1>ยินดีต้อนรับ — จตุรมิตร 4 เหล่าโรงเรียน</h1>
         <div class="marquee-wrap">
           <div class="marquee">
-            ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
+            ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อั[...]
+
           </div>
         </div>
       
@@ -182,15 +190,19 @@
     <h1><mark>บทนำ</mark></h1>
   </center>
   <br>
-  <p>การแข่งขันฟุตบอลประเพณีจตุรมิตรสามัคคี (อังกฤษ: Jaturamitr Samakkee) เป็นประเพณีการแข่งขันฟุตบอลกระชับมิตรระดับมัธยมศึกษาของโรงเรียนชายล้วนเก่าแก่สี่โรงเรียนประกอบด้วย โรงเรียนสวนกุหลาบวิทยาลัย โรงเรียนเทพศิรินทร์ โรงเรียนอัสสัมชัญ และโรงเรียนกรุงเทพคริสเตียนวิทยาลัย ณ สนามศุภชลาศัย กรีฑาสถานแห่งชาติ
+  <p>การแข่งขันฟุตบอลประเพณีจตุรมิตรสามัคคี (อังกฤษ: Jaturamitr Samakkee) เป็นประเพณีก[...]
+
 </p>
 </section>
   <center>
-  <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6805uzCsBEWB3UHDEjAltUBcj7AXJ1igzaogGZiB-vsBe0wjxjeWNsUUI794VXGBCOfY&usqp=CAU"width = "250" height = "250" class = "zoom">
-    <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdH2sA6hQ2mt17UoOhWPzRmMJpl_rWyddBiIeDhh54A6fpAgtYQ5WM_Vn7T-YXtyxE7bE&usqp=CAU"width = "250" height = "250" class = "zoom">
-    <img src = "https://www.bcc.ac.th/2019/img/logo/logo_bcc_annouce.jpg"width = "250" height = "250" class = "zoom">
-    <img src = "https://yt3.googleusercontent.com/VrvAp_1Wh6cXV-xB7RjpDl2KTdtwxuTubTC4XdJ2pzM9l0v65n4IAt7AwrbZFTqnqbE3VpLQZA=s900-c-k-c0x00ffffff-no-rj"width = "250" height = "250" class = "zoom">
+  <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6805uzCsBEWB3UHDEjAltUBcj7AXJ1igzaogGZiB-vsBe0wjxjeWNsUUI794VXGBCOfY&usqp=CAU" width = "250" height = "250" class = "zoom">
+    <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdH2sA6hQ2mt17UoOhWPzRmMJpl_rWyddBiIeDhh54A6fpAgtYQ5WM_Vn7T-YXtyxE7bE&usqp=CAU" width = "250" height = "250" class = "zoom">
+    <img src = "https://www.bcc.ac.th/2019/img/logo/logo_bcc_annouce.jpg" width = "250" height = "250" class = "zoom">
+    <img src = "https://yt3.googleusercontent.com/VrvAp_1Wh6cXV-xB7RjpDl2KTdtwxuTubTC4XdJ2pzM9l0v65n4IAt7AwrbZFTqnqbE3VpLQZA=s900-c-k-c0x00ffffff-no-rj" width = "250" height = "250" class = "zoom">
   </center>
   <hr style = "height:8px; width:80%;
     background: linear-gradient(to right,hotpink,skyblue,limegreen,yellow,violet,gold,red,white);">
 </html>
+
+```
+**Now when you point the mouse at an image with class="zoom", the image will zoom out (shrink) instead of zooming in.**
