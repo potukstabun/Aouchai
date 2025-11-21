@@ -1,0 +1,171 @@
+<html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>จตุรมิตร 31 — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน</title>
+
+    <!-- ฟอนต์ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap" rel="stylesheet" />
+
+    <style>
+      
+      :root {
+        --bg-overlay: rgba(0,0,0,0.45);
+        --accent-1: #ff83bf; /* สวนกุหลาบ */
+        --accent-2: #9bd84b; /* เทพศิรินทร์ */
+        --accent-3: #e63946; /* อัสสัมชัญ */
+        --accent-4: #9b59ff; /* กรุงเทพคริสเตียน */
+        --btn-text: #05132a;
+        --glass-radius: 12px;
+        --max-width: 1000px;
+      cursor;url("jatuu (1).png"),auto; height:100vh }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: "Prompt", system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", sans-serif;
+        background-color: #111;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px;
+      }
+
+      .page-bg {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+          url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1Xy7iCwBYQUjG8YKgIk4f6wDtSC8obBR0Q&s");
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        filter: brightness(.95);
+      }
+
+      .container {
+        width: 100%;
+        max-width: var(--max-width);
+        text-align: center;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -999px;
+      }
+
+      header {
+        background: radial-gradient(circle at top, rgba(255,192,203,0.85), rgba(135,206,250,0.8), rgba(255,255,255,0.7));
+        padding: 30px;
+        border-radius: 16px;
+        margin-bottom: 28px;
+      }
+
+      header h1 {
+        margin: 0 0 18px;
+        font-weight: 600;
+        font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+        text-shadow: 0 2px 6px rgba(0,0,0,.6);
+      }
+
+      .marquee-wrap {
+        overflow: hidden;
+        border-radius: var(--glass-radius);
+        background: rgba(255,255,255,0.08);
+        padding: 8px 12px;
+        margin-bottom: 20px;
+      }
+
+      .marquee {
+        display: inline-block;
+        white-space: nowrap;
+        will-change: transform;
+        padding-left: 100%;
+        animation: scroll-left 12s linear infinite;
+        font-weight: 600;
+        color: #f1f1ff;
+      }
+
+      @keyframes scroll-left {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-100%); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .marquee { animation: none; transform: none; padding-left: 0; }
+      }
+
+      .schools {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .school-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--btn-text);
+        background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        transition: transform .18s ease, box-shadow .18s ease;
+        font-weight: 600;
+      }
+
+      .school-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+      }
+
+      .school-btn.sk { border-top: 5px solid var(--accent-1); }
+      .school-btn.deb { border-top: 5px solid var(--accent-2); }
+      .school-btn.assump { border-top: 5px solid var(--accent-3); }
+      .school-btn.bcc { border-top: 5px solid var(--accent-4); }
+
+      /* Footer menu */
+      #menu {
+        margin-top: 40px;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        background: linear-gradient(90deg, limegreen, yellow, skyblue, violet, gold, red, white);
+        border-radius: 12px;
+      }
+
+      #menu a {
+        color: #111;
+        font-weight: 600;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+
+      #menu a:hover {
+        text-decoration: underline;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <main class="container">
+      <header>
+        <h1>ยินดีต้อนรับ — จตุรมิตร 4 เหล่าโรงเรียน</h1>
+        <div class="marquee-wrap">
+          <div class="marquee">
+            ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
+          </div>
+        </div>
+      </header>
+    </main>
+  </body>
+</html>
