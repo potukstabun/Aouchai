@@ -45,7 +45,7 @@
         transition: transform .2s ease;
         cursor: pointer;
       }
-      /* .zoom-out-btn {
+       .zoom-out-btn {
         display: none;
         margin: 12px 0;
         padding: 8px 18px;
@@ -60,7 +60,7 @@
       }
       .zoomed + .zoom-out-btn {
         display: inline-block;
-      } */
+      } 
 
       .page-bg {
         position: fixed;
@@ -186,10 +186,6 @@
         const zoomImgs = document.querySelectorAll('.zoom');
         zoomImgs.forEach(function(img) {
           img.addEventListener('click', function() {
-            // Remove zoom from others
-            //zoomImgs.forEach(i => i.classList.remove('zoomed'));
-            //img.classList.add('zoomed');
-            // Show the zoom-out button next to it
             let btn = img.nextElementSibling;
             if(btn && btn.classList.contains("zoom-out-btn")){
               btn.style.display = "inline-block";
@@ -211,7 +207,6 @@
     </script>
   </head>
   <body>
-    <div class="page-bg" aria-hidden="true"></div>
 
     <!-- Main navigation menu -->
     <nav id="menu">
