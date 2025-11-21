@@ -188,8 +188,8 @@
         zoomImgs.forEach(function(img) {
           img.addEventListener('click', function() {
             // Remove zoom from others
-            zoomImgs.forEach(i => i.classList.remove('zoomed'));
-            img.classList.add('zoomed');
+            //zoomImgs.forEach(i => i.classList.remove('zoomed'));
+            //img.classList.add('zoomed');
             // Show the zoom-out button next to it
             let btn = img.nextElementSibling;
             if(btn && btn.classList.contains("zoom-out-btn")){
