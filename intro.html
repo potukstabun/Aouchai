@@ -1,17 +1,13 @@
-<html>
 <html lang="th">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>จตุรมิตร 31 — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน</title>
-
     <!-- ฟอนต์ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap" rel="stylesheet" />
-
     <style>
-      
       :root {
         --bg-overlay: rgba(0,0,0,0.45);
         --accent-1: #ff83bf; /* สวนกุหลาบ */
@@ -21,7 +17,8 @@
         --btn-text: #05132a;
         --glass-radius: 12px;
         --max-width: 1000px;
-      cursor;url("jatuu (1).png"),auto; height:100vh }
+        cursor:url("jatuu (1).png"),auto; height:100vh;
+      }
 
       * { box-sizing: border-box; }
       html, body { height: 100%; }
@@ -34,15 +31,39 @@
         flex-direction: column;
         align-items: center;
         padding: 24px;
-        section{background: radial-gradient(hotpink,skyblue);
-               padding: 15px;
-               margin: 20px auto;
-                width: 70%;
-               border-radius:10px}
-        p{text-indent:2em}
+      }
+      section{
+        background: radial-gradient(hotpink,skyblue);
+        padding: 15px;
+        margin: 20px auto;
+        width: 70%;
+        border-radius:10px
+      }
+      p{text-indent:2em}
 
-        .zoom:hover{transfrom:scale(1.5);cursor:pointer;}
-        
+      .zoom {
+        transition: transform .2s ease;
+        cursor: pointer;
+      }
+      .zoom.zoomed {
+        transform: scale(1.5);
+        z-index: 100;
+      }
+      .zoom-out-btn {
+        display: none;
+        margin: 12px 0;
+        padding: 8px 18px;
+        border-radius: 8px;
+        border: none;
+        background: #fff;
+        color: #111;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        font-size: 1rem;
+      }
+      .zoomed + .zoom-out-btn {
+        display: inline-block;
       }
 
       .page-bg {
@@ -159,12 +180,47 @@
       #menu a:hover {
         text-decoration: underline;
       }
-
     </style>
-  </head>
+    <script>
+      // Zoom functionality for images
+      document.addEventListener('DOMContentLoaded', function() {
+        const zoomImgs = document.querySelectorAll('.zoom');
+        zoomImgs.forEach(function(img) {
+          img.addEventListener('click', function() {
+            // Remove zoom from others
+            zoomImgs.forEach(i => i.classList.remove('zoomed'));
+            img.classList.add('zoomed');
+            // Show the zoom-out button next to it
+            let btn = img.nextElementSibling;
+            if(btn && btn.classList.contains("zoom-out-btn")){
+              btn.style.display = "inline-block";
+            }
+          });
 
+          // Add Zoom-out button
+          const btn = document.createElement('button');
+          btn.innerText = "Zoom out";
+          btn.className = "zoom-out-btn";
+          btn.style.display = "none";
+          btn.addEventListener('click', function(e) {
+            img.classList.remove('zoomed');
+            btn.style.display = "none";
+          });
+          img.parentNode.insertBefore(btn, img.nextSibling);
+        });
+      });
+    </script>
+  </head>
   <body>
     <div class="page-bg" aria-hidden="true"></div>
+
+    <!-- Main navigation menu -->
+    <nav id="menu">
+      <a href="#intro">หน้าแรก</a>
+      <a href="#schools">โรงเรียน</a>
+      <a href="#about">เกี่ยวกับ</a>
+      <a href="#contact">ติดต่อ</a>
+    </nav>
 
     <main class="container">
       <header>
@@ -174,24 +230,37 @@
             ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
           </div>
         </div>
-      
       </header>
     </main>
+    <section id="intro">
+      <center>
+        <h1><mark>บทนำ</mark></h1>
+      </center>
+      <br>
+      <p>
+        การแข่งขันฟุตบอลประเพณีจตุรมิตรสามัคคี (อังกฤษ: Jaturamitr Samakkee) เป็นประเพณีการแข่งขันฟุตบอลระหว่าง 4 โรงเรียนชายล้วนเก่าแก่ในประเทศไทย
+      </p>
+    </section>
+    <div id="schools" style="width:100%;text-align:center;">
+      <center>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6805uzCsBEWB3UHDEjAltUBcj7AXJ1igzaogGZiB-vsBe0wjxjeWNsUUI794VXGBCOfY&usqp=CAU" width="250" height="250" class="zoom">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdH2sA6hQ2mt17UoOhWPzRmMJpl_rWyddBiIeDhh54A6fpAgtYQ5WM_Vn7T-YXtyxE7bE&usqp=CAU" width="250" height="250" class="zoom">
+        <img src="https://www.bcc.ac.th/2019/img/logo/logo_bcc_annouce.jpg" width="250" height="250" class="zoom">
+        <img src="https://yt3.googleusercontent.com/VrvAp_1Wh6cXV-xB7RjpDl2KTdtwxuTubTC4XdJ2pzM9l0v65n4IAt7AwrbZFTqnqbE3VpLQZA=s900-c-k-c0x00ffffff-no-rj" width="250" height="250" class="zoom">
+      </center>
+    </div>
+    <section id="about">
+      <center>
+        <h2>เกี่ยวกับจตุรมิตร</h2>
+      </center>
+      <p>งานฟุตบอลประเพณีนี้จัดขึ้นทุกๆ 2 ปี ถือเป็นงานรวมตัวของนักเรียน ศิษย์เก่า และแฟนฟุตบอลจากทั้ง 4 โรงเรียน</p>
+    </section>
+    <section id="contact">
+      <center>
+        <h2>ติดต่อทีมงาน</h2>
+      </center>
+      <p>สามารถติดต่อสอบถามข้อมูลเพิ่มเติมได้ทางอีเมล: example@email.com</p>
+    </section>
+    <hr style="height:8px; width:80%; background: linear-gradient(to right,hotpink,skyblue,limegreen,yellow,violet,gold,red,white);">
   </body>
-<section>
-  <center>
-    <h1><mark>บทนำ</mark></h1>
-  </center>
-  <br>
-  <p>การแข่งขันฟุตบอลประเพณีจตุรมิตรสามัคคี (อังกฤษ: Jaturamitr Samakkee) เป็นประเพณีการแข่งขันฟุตบอลกระชับมิตรระดับมัธยมศึกษาของโรงเรียนชายล้วนเก่าแก่สี่โรงเรียนประกอบด้วย โรงเรียนสวนกุหลาบวิทยาลัย โรงเรียนเทพศิรินทร์ โรงเรียนอัสสัมชัญ และโรงเรียนกรุงเทพคริสเตียนวิทยาลัย ณ สนามศุภชลาศัย กรีฑาสถานแห่งชาติ
-</p>
-</section>
-  <center>
-  <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6805uzCsBEWB3UHDEjAltUBcj7AXJ1igzaogGZiB-vsBe0wjxjeWNsUUI794VXGBCOfY&usqp=CAU"width = "250" height = "250" class = "zoom">
-    <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdH2sA6hQ2mt17UoOhWPzRmMJpl_rWyddBiIeDhh54A6fpAgtYQ5WM_Vn7T-YXtyxE7bE&usqp=CAU"width = "250" height = "250" class = "zoom">
-    <img src = "https://www.bcc.ac.th/2019/img/logo/logo_bcc_annouce.jpg"width = "250" height = "250" class = "zoom">
-    <img src = "https://yt3.googleusercontent.com/VrvAp_1Wh6cXV-xB7RjpDl2KTdtwxuTubTC4XdJ2pzM9l0v65n4IAt7AwrbZFTqnqbE3VpLQZA=s900-c-k-c0x00ffffff-no-rj"width = "250" height = "250" class = "zoom">
-  </center>
-  <hr style = "height:8px; width:80%;
-    background: linear-gradient(to right,hotpink,skyblue,limegreen,yellow,violet,gold,red,white);">
 </html>
