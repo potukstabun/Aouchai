@@ -1,0 +1,180 @@
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ประวัติ</title>
+
+  <!-- ฟอนต์ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-overlay: rgba(0,0,0,0.45);
+      --accent-1: #ff83bf; 
+      --accent-2: #9bd84b;
+      --accent-3: #e63946; 
+      --accent-4: #9b59ff;
+      --btn-text: #05132a;
+      --glass-radius: 12px;
+      --max-width: 1000px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Prompt";
+      background-color: #111;
+      color: #fff;
+      padding: 24px;
+    }
+
+    p { text-indent: 2em; }
+
+    /* zoom effect */
+    .zoom { 
+      transition: transform .3s ease; 
+      cursor: pointer;
+    }
+
+    .zoom.zoomed {
+      transform: scale(1.5);
+    }
+
+    .zoom-out-btn {
+      display: none;
+      margin-top: 10px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    /* glow hover */
+    img:hover {
+      animation: glowcolors 1.2s infinite alternate;
+    }
+
+    @keyframes glowcolors {
+      0% { box-shadow: 0 0 20px yellow; }
+      25% { box-shadow: 0 0 20px skyblue; }
+      50% { box-shadow: 0 0 20px green; }
+      75% { box-shadow: 0 0 20px gold; }
+      100% { box-shadow: 0 0 20px violet; }
+    }
+
+    /* marquee */
+    .marquee-wrap {
+      overflow: hidden;
+      background: rgba(255,255,255,0.08);
+      padding: 8px 12px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+
+    .marquee {
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: scroll-left 12s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* blinking box */
+    .blink-bg{
+      display: inline-block;
+      padding:6px 12px;
+      animation: blinkbg 1s infinite alternate;
+      font-weight: 600;
+    }
+
+    @keyframes blinkbg {
+      0% { box-shadow: 0 0 20px hotpink; }
+      25% { box-shadow: 0 0 20px skyblue; }
+      50% { box-shadow: 0 0 20px green; }
+      75% { box-shadow: 0 0 20px gold; }
+      100% { box-shadow: 0 0 20px violet; }
+    }
+
+    /* menu */
+    #menu {
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, limegreen, yellow, skyblue, violet, gold, red, white);
+      padding: 18px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    #menu a {
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const zoomImgs = document.querySelectorAll(".zoom");
+
+      zoomImgs.forEach(function(img) {
+        const btn = document.createElement("button");
+        btn.textContent = "Zoom out";
+        btn.className = "zoom-out-btn";
+
+        img.after(btn);
+
+        img.onclick = function() {
+          img.classList.add("zoomed");
+          btn.style.display = "inline-block";
+        };
+
+        btn.onclick = function() {
+          img.classList.remove("zoomed");
+          btn.style.display = "none";
+        };
+      });
+    });
+  </script>
+
+</head>
+<body>
+
+  <nav id="menu">
+    <a href="#intro">หน้าแรก</a>
+    <a href="#schools">โรงเรียน</a>
+    <a href="#about">เกี่ยวกับ</a>
+    <a href="#contact">ติดต่อ</a>
+  </nav>
+
+  <main>
+
+    <header style="background: radial-gradient(circle at top, rgba(255,192,203,0.85), rgba(135,206,250,0.8), rgba(255,255,255,0.7)); padding:30px; border-radius:16px;">
+      <h1>ประวัติ</h1>
+
+      <div class="marquee-wrap">
+        <div class="marquee">
+          ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
+        </div>
+      </div>
+
+      <p>การแข่งขันจตุรมิตรสามัคคีเริ่มต้นครั้งแรกในปี พ.ศ. 2507 ... (ข้อความเดิม)</p>
+
+      <span class="blink-bg">รูปบุคคลสำคัญ</span>
+
+      <br><br>
+      <center>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Football_pictogram.svg/1200px-Football_pictogram.svg.png"
+             width="250" height="250" class="zoom">
+      </center>
+
+      <hr style="margin-top: 30px; height: 8px; background: white; border: none; border-radius: 4px;">
+    </header>
+
+  </main>
+
+</body>
+</html>
