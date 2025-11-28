@@ -33,7 +33,7 @@
         padding: 24px;
       }
       section{
-        background: radial-gradient(hotpink,skyblue);
+        background: radial-gradient(Green,yellow);
         padding: 15px;
         margin: 20px auto;
         width: 70%;
@@ -41,9 +41,23 @@
       }
       p{text-indent:2em}
 
-      .zoom {
-        transition: transform .2s ease;
-        cursor: pointer;
+      .zoom {transform: scale(1.5);
+        cursor: pointer;}
+      img:hoverr{animation:glowcolors 1.2s infinte alternate;}
+        @keyframes glowcolors {
+        0% {background : yellow; }
+        25% {box-shadow:skyblue; }
+      }
+      .blink-bg{
+        animation:blinkbg 1s infinite alternate;
+        padding:3px 6px; 
+      }
+       @keyframes blinkbg {
+        0% {box-shadow:0 0 20px hotpink; }
+        25% {box-shadow:0 0 20px skyblue; }
+          50% {box-shadow:0 0 20px green; }
+          75% {box-shadow:0 0 20px gold; }
+          100% {box-shadow:0 0 20px violet; }
       }
        .zoom-out-btn {
         display: none;
@@ -218,12 +232,20 @@
 
     <main class="container">
       <header>
-        <h1>ยินดีต้อนรับ — จตุรมิตร 4 เหล่าโรงเรียน</h1>
+        <h1>ประวัติ</h1>
         <div class="marquee-wrap">
           <div class="marquee">
             ยินดีต้อนรับเข้าสู่เว็บไซต์จตุรมิตร — สวนกุหลาบ • เทพศิรินทร์ • อัสสัมชัญ • กรุงเทพคริสเตียน
           </div>
-        </div>
+          <p>การแข่งขันจตุรมิตรสามัคคีเริ่มต้นขึ้นครั้งแรกในปี พ.ศ. 2507 และได้จัดอย่างต่อเนื่องทุกปี จนกระทั่งในปี พ.ศ. 2530 ได้ปรับมาเป็นจัดทุก 2 ปีตามที่ปรากฎในปัจจุบัน งานดังกล่าวมักจะจัดขึ้น 1 สัปดาห์ในช่วงฤดูหนาวเดือนพฤศจิกายน โดยปกติแล้วเจ้าภาพจะวันต่อเนื่องกันตามเข็มนาฬิกา เมื่อใดที่โรงเรียนใดโรงเรียนหนึ่งเป็นเจ้าภาพจะวนสีประจำโรงเรียนนั้นไว้มุมบนของตราลายประจำ</p>
+        <span class="blink-bg">รูปบุคคลสำคัญ</span>
+          <br><br>
+          <center>
+      <img src=""width="250" height="250"class="zoom">
+          </center>
+          <br>
+          <hr style=height:8px; width:80%>
+          <div background: linear-gradient(90deg, limegreen, yellow, skyblue, violet, gold, red, white);>
       </header>
     </main>
   </body>
