@@ -2,51 +2,65 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>สวัสดีปีใหม่ 🎆</title>
+    <title>สวัสดีปีใหม่ 🎉</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            height: 100vh;
-            background: linear-gradient(120deg, #ff512f, #dd2476);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1d2671, #c33764);
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            text-align: center;
-            overflow: hidden;
+            color: #fff;
         }
 
-        .container {
-            background: rgba(0,0,0,0.35);
-            padding: 40px 60px;
+        .card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.4);
+            width: 90%;
+            max-width: 650px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2rem;
+            text-align: center;
+            font-size: 3rem;
         }
 
         .year {
-            font-size: 5rem;
-            font-weight: bold;
-            color: #ffd700;
+            text-align: center;
+            font-size: 4.5rem;
+            color: gold;
+        }
+
+        .message {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .info, .music {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .music h2, .info h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        audio {
+            width: 100%;
+            margin: 10px 0;
         }
 
         footer {
-            margin-top: 30px;
+            text-align: center;
+            margin-top: 20px;
             font-size: 0.9rem;
             opacity: 0.8;
         }
@@ -54,15 +68,53 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>🎉 สวัสดีปีใหม่ 🎉</h1>
-        <div class="year">2026</div>
-        <h2>ขอให้มีความสุข สุขภาพแข็งแรง</h2>
-        <p>สมหวังในทุกสิ่งที่ตั้งใจไว้ 💖</p>
-        <footer>
-            © Happy New Year
-        </footer>
+<div class="card">
+    <h1>🎆 สวัสดีปีใหม่ 🎆</h1>
+    <div class="year">2026</div>
+
+    <div class="message">
+        ขอให้ปีใหม่นี้เต็มไปด้วยความสุข  
+        ความสำเร็จ และพลังบวก 💖
     </div>
+
+    <div class="info">
+        <h2>ข้อมูลผู้จัดทำ</h2>
+        <p><strong>ชื่อ:</strong> นายสมชาย ใจดี</p>
+        <p><strong>แผนก:</strong> คอมพิวเตอร์ธุรกิจ</p>
+        <p><strong>โรงเรียน:</strong> วิทยาลัยเทคโนโลยีตัวอย่าง</p>
+        <p><strong>คำอวยพร:</strong>  
+            ขอให้ทุกคนสมหวังในสิ่งที่ตั้งใจ 🎁
+        </p>
+    </div>
+
+    <div class="music">
+        <h2>🎵 เพลงปีใหม่ 🎵</h2>
+
+        <p>1. เพลงปีใหม่ – สุนทราภรณ์</p>
+        <audio controls>
+            <source src="song1.mp3" type="audio/mpeg">
+        </audio>
+
+        <p>2. Happy New Year – ABBA</p>
+        <audio controls>
+            <source src="song2.mp3" type="audio/mpeg">
+        </audio>
+
+        <p>3. สวัสดีปีใหม่</p>
+        <audio controls>
+            <source src="song3.mp3" type="audio/mpeg">
+        </audio>
+
+        <p>4. New Year Celebration</p>
+        <audio controls>
+            <source src="song4.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <footer>
+        © 2026 Happy New Year Website
+    </footer>
+</div>
 
 </body>
 </html>
