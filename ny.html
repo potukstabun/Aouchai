@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+    <!-- กำหนดชุดอักขระให้รองรับภาษาไทย -->
     <meta charset="UTF-8">
-    <title>สวัสดีปีใหม่ 🎉</title>
+
+    <!-- ทำให้เว็บรองรับมือถือและแท็บเล็ต -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ชื่อเว็บ -->
+    <title>เว็บไซต์สวัสดีปีใหม่ 🎉</title>
+
     <style>
+        /* =========================
+           ตั้งค่าพื้นฐานของหน้าเว็บ
+        ========================== */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -12,43 +22,53 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            color: white;
+            overflow: hidden; /* ซ่อนเอฟเฟกต์ที่เกินจอ */
         }
 
+        /* =========================
+           กล่องเนื้อหาหลัก
+        ========================== */
         .card {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 40px;
+            background: rgba(0,0,0,0.45);
+            padding: 30px;
             border-radius: 20px;
             width: 90%;
-            max-width: 650px;
+            max-width: 700px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 1;
         }
 
         h1 {
             text-align: center;
-            font-size: 3rem;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
         }
 
         .year {
             text-align: center;
-            font-size: 4.5rem;
+            font-size: 4rem;
             color: gold;
+            margin-bottom: 15px;
         }
 
         .message {
             text-align: center;
-            margin: 20px 0;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
         }
 
-        .info, .music {
+        /* =========================
+           กล่องข้อมูล / เพลง
+        ========================== */
+        .box {
             background: rgba(255,255,255,0.1);
             padding: 20px;
             border-radius: 15px;
             margin-top: 20px;
         }
 
-        .music h2, .info h2 {
+        .box h2 {
             text-align: center;
             margin-top: 0;
         }
@@ -61,14 +81,61 @@
         footer {
             text-align: center;
             margin-top: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
+        }
+
+        /* =========================
+           เอฟเฟกต์พลุ 🎇
+        ========================== */
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: gold;
+            border-radius: 50%;
+            animation: explode 1.5s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(20);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           Responsive สำหรับมือถือ 📱
+        ========================== */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .year {
+                font-size: 3rem;
+            }
+            .message {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- เอฟเฟกต์พลุ -->
+<div class="firework" style="top:20%; left:25%;"></div>
+<div class="firework" style="top:35%; left:70%;"></div>
+<div class="firework" style="top:60%; left:50%;"></div>
+
+<!-- =========================
+     เนื้อหาเว็บไซต์
+========================= -->
 <div class="card">
+
     <h1>🎆 สวัสดีปีใหม่ 🎆</h1>
     <div class="year">2026</div>
 
@@ -77,17 +144,21 @@
         ความสำเร็จ และพลังบวก 💖
     </div>
 
-    <div class="info">
+    <!-- หน้าปก / ข้อมูลผู้จัดทำ -->
+    <div class="box">
         <h2>ข้อมูลผู้จัดทำ</h2>
-        <p><strong>ชื่อ:</strong >ยุทธ์ธนพัส โกศลศาสตร์</p>
+        <p><strong>ชื่อ:</strong> ยุทธ์ธนพัส โกศลศาสตร์</p>
         <p><strong>ห้อง:</strong> 213</p>
         <p><strong>เลขที่:</strong> 19</p>
-        <p><strong>คำอวยพร:</strong>  
-            ขอให้ทุกคนสมหวังในสิ่งที่ตั้งใจ 🎁
+        <p><strong>รายวิชา:</strong> การพัฒนาเว็บไซต์</p>
+        <p><strong>วัตถุประสงค์:</strong>  
+            เพื่อสร้างเว็บไซต์ต้อนรับวันปีใหม่  
+            โดยใช้ภาษา HTML และ CSS
         </p>
     </div>
 
-    <div class="music">
+    <!-- เพลงปีใหม่ -->
+    <div class="box">
         <h2>🎵 เพลงปีใหม่ 🎵</h2>
 
         <p>1. เพลงปีใหม่ – สุนทราภรณ์</p>
@@ -114,6 +185,7 @@
     <footer>
         © 2026 Happy New Year Website
     </footer>
+
 </div>
 
 </body>
